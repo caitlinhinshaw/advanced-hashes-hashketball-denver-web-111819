@@ -162,17 +162,20 @@ def player_numbers(team_name)
   hash = game_hash
   jersey_numbers = []
     hash.each do |team, attributes|
-      if attributes[:team_name] == team_name
-        attributes.each do |key, value|
-          if key == :players
-            value.each do |player|
-            jersey_numbers.push(player[:number])
+      if hash[team].values.include?(team_name)
+        attributes.each do |attribute, info|
+        if info.class == Hash
+          info.each do |player, stats|
+            stats.each do |stat, int|
+              if stat == :number
+                array << int.to_i
+              end
             end
           end
         end
       end
     end
-    return output
+    return jersey_numbers
 end
 
 def player_stats
