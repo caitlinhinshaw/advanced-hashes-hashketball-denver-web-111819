@@ -216,7 +216,7 @@ end
 
 def most_points_scored
   hash = game_hash
-  max_player = []
+  max_player = {}
   hash.each do |team, team_hash|
     team_hash[:players].each do |player, player_hash|
       if player_hash[:stats][:points] > max_player[:stats][:points]
