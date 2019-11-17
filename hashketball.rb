@@ -179,8 +179,16 @@ def player_numbers(team_name)
     return jersey_numbers
 end
 
-def player_stats
-
+def player_stats(player_name)
+  hash = game_hash
+  hash.each do |team, info|
+    info.each do |attribute, list|
+      if list.include?(player_name)
+       player = hash[team][attribute][player_name]
+       return player
+      end
+    end
+  end
 end
 
 def big_shoe_rebounds
