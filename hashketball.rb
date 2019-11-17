@@ -120,7 +120,7 @@ def num_points_scored(player_name)
   hash.each do |team, info|
     info.each do |attribute, list|
       if list.include?(player_name)
-       return hash[team][attribute][player_name]
+       return hash[team][attribute][player_name][:points]
       end
     end
   end
