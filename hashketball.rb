@@ -226,7 +226,7 @@ def most_points_scored
       end
     end
   end
-  return points_owner
+  return int.points_owner
 end
 
 def winning_team
