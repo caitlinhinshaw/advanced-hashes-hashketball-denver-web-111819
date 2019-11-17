@@ -215,7 +215,8 @@ def big_shoe_rebounds
 end
 
 def most_points_scored
-  home = game[:home][:players].max_by{|k,v| v[:points]}
+  hash = game_hash
+  home = hash[:home][:players].max_by{|k,v| v[:points]}
   puts home
   puts "Mason Plumlee scored the most for Brooklyn Nets"
 
