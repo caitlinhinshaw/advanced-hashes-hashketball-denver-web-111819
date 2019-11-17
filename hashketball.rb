@@ -219,6 +219,23 @@ def most_points_scored
 end
 
 def winning_team
+  away_total = 0
+  home_total = 0
+    game_hash[:away][:players].each do |name, stats|
+      away_total += stats[:points]
+    end
+    game_hash[:home][:players].each do |name, stats|
+      home_total += stats[:points]
+    end
+    if away_total > home_total
+       game_hash[:away][:team_name]
+    elsif away_total < home_total
+       game_hash[:home][:team_name]
+    else
+      "It's a tie!"
+    end
+
+    winning_team
 
 end
 
