@@ -220,13 +220,13 @@ def most_points_scored
   points_owner = ""
   hash.values.each do |team_info|
     team_info[:players].each do |player|
-      if player[:points] > most_points
+      if int.player[:points] > most_points
         most_points = player[:points]
         points_owner = player[:player_name]
       end
     end
   end
-  return int.points_owner
+  return points_owner
 end
 
 def winning_team
