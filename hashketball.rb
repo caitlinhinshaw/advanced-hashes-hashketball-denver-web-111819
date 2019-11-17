@@ -234,9 +234,6 @@ def winning_team
     else
       "It's a tie!"
     end
-
-    winning_team
-
 end
 
 def player_with_longest_name
