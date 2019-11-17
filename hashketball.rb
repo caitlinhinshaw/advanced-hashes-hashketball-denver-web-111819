@@ -216,15 +216,17 @@ end
 
 def most_points_scored
   hash = game_hash
-  max_player = {}
-  hash.each do |team, team_hash|
-    team_hash[:players].each do |player, player_hash|
-      if player_hash[:stats][:points] > max_player[:stats][:points]
-        max_player = player_hash
+  most_points = 0
+  points_owner = ""
+  hash.values.each do |team_info|
+    team_info[:players].each do |player|
+      if player[:points] > most_points
+        most_points = player[:points] 
+        points_owner = player[:player_name] 
       end
     end
   end
-  max_player[:name]
+  return points_owner
 end
 
 def winning_team
