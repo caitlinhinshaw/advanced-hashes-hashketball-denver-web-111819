@@ -164,16 +164,16 @@ def player_numbers(team_name)
     hash.each do |team, attributes|
       if hash[team].values.include?(team_name)
         attributes.each do |attribute, info|
-        if info.class == Hash
-          info.each do |player, stats|
-            stats.each do |stat, int|
-              if stat == :number
-                jersey_numbers << int.to_i
+          if info.class == Hash
+            info.each do |player, stats|
+              stats.each do |stat, int|
+                if stat == :number
+                  jersey_numbers << int.to_i
+                end
               end
             end
           end
         end
-      end
       end
     end
     return jersey_numbers
