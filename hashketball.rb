@@ -143,8 +143,8 @@ def team_colors(team_name)
   hash = game_hash
   hash.each do |team, info|
     if info.include?(team_name)
-      team_colors = hash[team][:colors]
-      return "#{team_colors[0]} and #{team_colors[1]}"
+      team_colors = hash[team]
+      return team_colors
     end
   end
 end
