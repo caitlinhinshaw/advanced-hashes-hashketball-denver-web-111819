@@ -141,7 +141,7 @@ end
 
 def team_colors(team_name)
   hash = game_hash
-  array = []
+  #array = []
   hash.each do |team, attributes|
     if hash[team].values.include?(team_name)
       attributes.each do |attribute, info|
