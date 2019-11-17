@@ -133,7 +133,7 @@ def shoe_size(player_name)
     info.each do |attribute, list|
       if list.include?(player_name)
        player = hash[team][attribute][player_name]
-       return player[:shoe_size]
+       return player[:shoe]
       end
     end
   end
