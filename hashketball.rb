@@ -121,7 +121,7 @@ def num_points_scored(player_name)
     info.each do |attribute, list|
       if list.include?(player_name)
        player = hash[team][[attribute][player_name]]
-       return player[:points]
+       return player
       end
     end
   end
