@@ -220,7 +220,7 @@ def most_points_scored
   puts home
   puts "Mason Plumlee scored the most for Brooklyn Nets"
 
-  away = game[:away][:players].max_by{|k,v| v[:points]}
+  away = hash[:away][:players].max_by{|k,v| v[:points]}
   puts away
   puts "Ben Gorden scored the most for Charlotte Hornets"
 end
