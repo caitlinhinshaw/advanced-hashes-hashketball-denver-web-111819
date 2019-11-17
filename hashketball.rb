@@ -120,8 +120,8 @@ def num_points_scored(player_name)
   hash.each do |team, info|
     info.each do |attribute, list|
       if list.include?(player_name)
-       player = hash[team][[attribute][player_name]]
-       return player
+       player = hash[team][attribute][player_name]
+       return player[:points]
       end
     end
   end
@@ -139,14 +139,8 @@ def shoe_size(player_name)
   end
 end
 
-def team_colors(team_name)
-  hash = game_hash
-  hash.each do |team, info|
-    if info.include?(team_name)
-      team_colors = hash[team][:colors]
-      return team_colors
-    end
-  end
+def team_colors()
+
 end
 
 def team_names
